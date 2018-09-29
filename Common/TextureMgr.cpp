@@ -6,7 +6,7 @@ TextureMgr::TextureMgr() : md3dDevice(0)
 
 TextureMgr::~TextureMgr()
 {
-	for(auto it = mTextureSRV.begin(); it != mTextureSRV.end(); ++it)
+	for( TEXTURE_MAP::iterator it = mTextureSRV.begin(); it != mTextureSRV.end(); ++it )
     {
 		ReleaseCOM(it->second);
     }

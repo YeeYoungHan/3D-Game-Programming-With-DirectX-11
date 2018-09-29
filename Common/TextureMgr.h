@@ -4,6 +4,8 @@
 #include "d3dUtil.h"
 #include <map>
 
+typedef std::map<std::wstring, ID3D11ShaderResourceView*> TEXTURE_MAP;
+
 ///<summary>
 /// Simple texture manager to avoid loading duplicate textures from file.  That can
 /// happen, for example, if multiple meshes reference the same texture filename. 
@@ -24,7 +26,7 @@ private:
 	
 private:
 	ID3D11Device* md3dDevice;
-	std::map<std::wstring, ID3D11ShaderResourceView*> mTextureSRV;
+	TEXTURE_MAP mTextureSRV;
 };
 
 #endif // TEXTUREMGR_H
