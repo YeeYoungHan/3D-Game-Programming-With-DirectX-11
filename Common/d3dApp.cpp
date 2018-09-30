@@ -373,9 +373,12 @@ bool D3DApp::InitDirect3D()
 
 	UINT createDeviceFlags = 0;
 
+/* 윈도우10 에서 정상적으로 동작하지 않는 기능이어서 주석 처리함
+   - https://stackoverflow.com/questions/44334207/d3d11createdevice-0x887a002d-error
 #if defined(DEBUG) || defined(_DEBUG)  
     createDeviceFlags |= D3D11_CREATE_DEVICE_DEBUG;
 #endif
+*/
 
 	D3D_FEATURE_LEVEL featureLevel;
 	HRESULT hr = D3D11CreateDevice(
