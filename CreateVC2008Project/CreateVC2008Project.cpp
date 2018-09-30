@@ -18,35 +18,40 @@
 
 #include "CreateVC2008Project.h"
 
+bool CreateVC2008Project( const char * pszFolder )
+{
+	CProjectInfo clsPI;
 
+	if( clsPI.SetFolder( pszFolder ) == false )
+	{
+		printf( "clsPI.SetFolder(%s) error\n", pszFolder );
+		return false;
+	}
+
+	if( CreateSolution( clsPI ) == false )
+	{
+		printf( "CreateSolution(%s) error\n", pszFolder );
+		return false;
+	}
+
+	if( CreateProject( clsPI ) == false )
+	{
+		printf( "CreateSolution(%s) error\n", pszFolder );
+		return false;
+	}
+
+	return true;
+}
 
 int main( int argc, char * argv[] )
 {
-	if( argc != 2 )
+	if( argc != 2 && argc != 3 )
 	{
 		printf( "[Usage] %s {folder}\n", argv[0] );
 		return 0;
 	}
 
-	CProjectInfo clsPI;
-
-	if( clsPI.SetFolder( argv[1] ) == false )
-	{
-		printf( "clsPI.SetFolder(%s) error\n", argv[1] );
-		return 0;
-	}
-
-	if( CreateSolution( clsPI ) == false )
-	{
-		printf( "CreateSolution error\n" );
-		return 0;
-	}
-
-	if( CreateProject( clsPI ) == false )
-	{
-		printf( "CreateSolution error\n" );
-		return 0;
-	}
+	CreateVC2008Project( argv[1] );
 
 	return 0;
 }
