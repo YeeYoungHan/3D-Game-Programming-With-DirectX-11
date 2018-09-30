@@ -221,6 +221,32 @@ bool CreateProject( CProjectInfo & clsPI )
 		fprintf( fd, "			</File>\r\n" );
 	}
 
+	for( itSL = clsPI.m_clsFxFileList.begin(); itSL != clsPI.m_clsFxFileList.end(); ++itSL )
+	{
+		fprintf( fd, "			<File\r\n" );
+		fprintf( fd, "				RelativePath=\".\\FX\\%s\"\r\n", itSL->c_str() );
+		fprintf( fd, "				>\r\n" );
+		fprintf( fd, "				<FileConfiguration\r\n" );
+		fprintf( fd, "					Name=\"Debug|Win32\"\r\n" );
+		fprintf( fd, "					>\r\n" );
+		fprintf( fd, "					<Tool\r\n" );
+		fprintf( fd, "						Name=\"VCCustomBuildTool\"\r\n" );
+		fprintf( fd, "						CommandLine=\"&quot;C:\\Program Files (x86)\\Microsoft DirectX SDK (June 2010)\\Utilities\\bin\\x86\\fxc.exe&quot; /Fc /Od /Zi /T fx_5_0 /Fo &quot;$(InputDir)\\$(InputName).fxo&quot; &quot;$(InputDir)\\$(InputFileName)&quot;\"\r\n" );
+		fprintf( fd, "						Outputs=\"$(InputDir)\\$(InputName).fxo\"\r\n" );
+		fprintf( fd, "					/>\r\n" );
+		fprintf( fd, "				</FileConfiguration>\r\n" );
+		fprintf( fd, "				<FileConfiguration\r\n" );
+		fprintf( fd, "					Name=\"Release|Win32\"\r\n" );
+		fprintf( fd, "					>\r\n" );
+		fprintf( fd, "					<Tool\r\n" );
+		fprintf( fd, "						Name=\"VCCustomBuildTool\"\r\n" );
+		fprintf( fd, "						CommandLine=\"&quot;C:\\Program Files (x86)\\Microsoft DirectX SDK (June 2010)\\Utilities\\bin\\x86\\fxc.exe&quot; /Fc /Od /Zi /T fx_5_0 /Fo &quot;$(InputDir)\\$(InputName).fxo&quot; &quot;$(InputDir)\\$(InputFileName)&quot;\"\r\n" );
+		fprintf( fd, "						Outputs=\"$(InputDir)\\$(InputName).fxo\"\r\n" );
+		fprintf( fd, "					/>\r\n" );
+		fprintf( fd, "				</FileConfiguration>\r\n" );
+		fprintf( fd, "			</File>\r\n" );
+	}
+
 	fprintf( fd, "		</Filter>\r\n" );
 	fprintf( fd, "	</Files>\r\n" );
 	fprintf( fd, "	<Globals>\r\n" );

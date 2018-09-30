@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{608EFCC8-C7A1-460C-BC4F-4F5EEA302047}") = "Hills", "Hills.vcproj", "{717B49A3-4A1F-4010-A86B-8062CD606BB5}"
+Project("{6354761F-55CC-49F3-9829-0B5A791B7DAF}") = "Hills", "Hills.vcproj", "{3243E8DC-6CD7-4372-B11D-37ED6179FDF1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5C9DF018-9495-4C20-BE26-E830A0AB3D08} = {5C9DF018-9495-4C20-BE26-E830A0AB3D08}
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38} = {DF460EAB-570D-4B50-9089-2E2FC801BF38}
 	EndProjectSection
 EndProject
-Project("{608EFCC8-C7A1-460C-BC4F-4F5EEA302047}") = "Common", "..\..\Common\Common.vcproj", "{5C9DF018-9495-4C20-BE26-E830A0AB3D08}"
+Project("{6354761F-55CC-49F3-9829-0B5A791B7DAF}") = "Common", "..\..\Common\Common.vcproj", "{5C9DF018-9495-4C20-BE26-E830A0AB3D08}"
 EndProject
-Project("{608EFCC8-C7A1-460C-BC4F-4F5EEA302047}") = "Effects11", "..\..\Effects11\Effects11_2008.vcproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
+Project("{6354761F-55CC-49F3-9829-0B5A791B7DAF}") = "Effects11", "..\..\Effects11\Effects11_2008.vcproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +19,12 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{717B49A3-4A1F-4010-A86B-8062CD606BB5}.Debug|Win32.ActiveCfg = Debug|Win32
-		{717B49A3-4A1F-4010-A86B-8062CD606BB5}.Debug|Win32.Build.0 = Debug|Win32
-		{717B49A3-4A1F-4010-A86B-8062CD606BB5}.Debug|x64.ActiveCfg = Debug|Win32
-		{717B49A3-4A1F-4010-A86B-8062CD606BB5}.Release|Win32.ActiveCfg = Release|Win32
-		{717B49A3-4A1F-4010-A86B-8062CD606BB5}.Release|Win32.Build.0 = Release|Win32
-		{717B49A3-4A1F-4010-A86B-8062CD606BB5}.Release|x64.ActiveCfg = Release|Win32
+		{3243E8DC-6CD7-4372-B11D-37ED6179FDF1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3243E8DC-6CD7-4372-B11D-37ED6179FDF1}.Debug|Win32.Build.0 = Debug|Win32
+		{3243E8DC-6CD7-4372-B11D-37ED6179FDF1}.Debug|x64.ActiveCfg = Debug|Win32
+		{3243E8DC-6CD7-4372-B11D-37ED6179FDF1}.Release|Win32.ActiveCfg = Release|Win32
+		{3243E8DC-6CD7-4372-B11D-37ED6179FDF1}.Release|Win32.Build.0 = Release|Win32
+		{3243E8DC-6CD7-4372-B11D-37ED6179FDF1}.Release|x64.ActiveCfg = Release|Win32
 		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|Win32.ActiveCfg = Debug|Win32
 		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|Win32.Build.0 = Debug|Win32
 		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|x64.ActiveCfg = Debug|Win32

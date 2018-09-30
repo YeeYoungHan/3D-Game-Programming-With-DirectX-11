@@ -49,6 +49,40 @@ bool GetGUID( std::string & strGUID )
 	return bRes;
 }
 
+bool SetFxFileList( const char * pszFolder, STRING_LIST & clsList )
+{
+	char			szPath[2048];
+	HANDLE		hSearch;
+	BOOL			fisOk = TRUE;
+	WIN32_FIND_DATA wfd;
+
+	_snprintf( szPath, sizeof(szPath), "%s\\*.*", pszFolder );
+
+	memset( &wfd, 0, sizeof(wfd) );
+	hSearch = FindFirstFile( szPath, &wfd );
+	if( hSearch == INVALID_HANDLE_VALUE )
+	{
+		return false;
+	}
+	
+	while( fisOk )
+	{
+		if( strcmp( wfd.cFileName, "." ) && strcmp( wfd.cFileName, ".." ) )
+		{
+			if( strstr( wfd.cFileName, ".fx" ) && strstr( wfd.cFileName, ".fxo" ) == NULL )
+			{
+				clsList.push_back( wfd.cFileName );
+			}
+		}
+
+		fisOk = FindNextFile( hSearch, &wfd );
+	}
+
+	FindClose(hSearch);
+
+	return true;
+}
+
 bool CProjectInfo::SetFolder( const char * pszFolder )
 {
 	m_strFolder = pszFolder;
@@ -67,7 +101,7 @@ bool CProjectInfo::SetFolder( const char * pszFolder )
 	if( GetGUID( m_strSolutionGUID ) == false ) return false;
 	if( GetGUID( m_strProjectGUID ) == false ) return false;
 
-	char			szPath[2048];
+	char			szPath[2048], szFileName[2048];
 	HANDLE		hSearch;
 	BOOL			fisOk = TRUE;
 	WIN32_FIND_DATA wfd;
@@ -75,6 +109,7 @@ bool CProjectInfo::SetFolder( const char * pszFolder )
 	_snprintf( szPath, sizeof(szPath), "%s\\*.*", pszFolder );
 
 	m_clsFileList.clear();
+	m_clsFxFileList.clear();
 
 	memset( &wfd, 0, sizeof(wfd) );
 	hSearch = FindFirstFile( szPath, &wfd );
@@ -90,6 +125,14 @@ bool CProjectInfo::SetFolder( const char * pszFolder )
 			if( strstr( wfd.cFileName, ".h" ) || strstr( wfd.cFileName, ".cpp" ) )
 			{
 				m_clsFileList.push_back( wfd.cFileName );
+			}
+			else if( wfd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY )
+			{
+				if( !strcmp( wfd.cFileName, "FX" ) )
+				{
+					_snprintf( szFileName, sizeof(szFileName), "%s\\%s", pszFolder, wfd.cFileName );
+					SetFxFileList( szFileName, m_clsFxFileList );
+				}
 			}
 		}
 
