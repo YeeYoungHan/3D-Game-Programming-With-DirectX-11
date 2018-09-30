@@ -16,15 +16,26 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
  */
 
-#ifndef _CREATE_VC2008_PROJECT_H_
-#define _CREATE_VC2008_PROJECT_H_
+#ifndef _PROJECT_INFO_H_
+#define _PROJECT_INFO_H_
 
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <stdio.h>
-#include "ProjectInfo.h"
+#include <string>
+#include <list>
 
-bool CreateSolution( CProjectInfo & clsPI );
-bool CreateProject( CProjectInfo & clsPI );
+typedef std::list< std::string > STRING_LIST;
+
+class CProjectInfo
+{
+public:
+	bool SetFolder( const char * pszFolder );
+
+	std::string m_strFolder;
+	std::string m_strName;
+	std::string m_strSolutionGUID;
+	std::string m_strProjectGUID;
+	STRING_LIST	m_clsFileList;
+};
 
 #endif

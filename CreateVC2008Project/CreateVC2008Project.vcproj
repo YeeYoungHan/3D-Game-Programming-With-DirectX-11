@@ -186,6 +186,14 @@
 				RelativePath=".\CreateVC2008Project.h"
 				>
 			</File>
+			<File
+				RelativePath=".\ProjectInfo.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ProjectInfo.h"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>
