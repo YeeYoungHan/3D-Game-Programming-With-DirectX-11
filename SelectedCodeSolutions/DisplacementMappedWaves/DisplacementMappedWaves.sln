@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{ECDFD9D8-E992-4C74-AF5D-53EC1A59F084}") = "DisplacementMappedWaves", "DisplacementMappedWaves.vcproj", "{F23555C7-7205-4D03-8ED3-DC38D554DFD7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08} = {5C9DF018-9495-4C20-BE26-E830A0AB3D08}
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38} = {DF460EAB-570D-4B50-9089-2E2FC801BF38}
+	EndProjectSection
+EndProject
+Project("{ECDFD9D8-E992-4C74-AF5D-53EC1A59F084}") = "Common", "..\..\Common\Common.vcproj", "{5C9DF018-9495-4C20-BE26-E830A0AB3D08}"
+EndProject
+Project("{ECDFD9D8-E992-4C74-AF5D-53EC1A59F084}") = "Effects11", "..\..\Effects11\Effects11_2008.vcproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F23555C7-7205-4D03-8ED3-DC38D554DFD7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F23555C7-7205-4D03-8ED3-DC38D554DFD7}.Debug|Win32.Build.0 = Debug|Win32
+		{F23555C7-7205-4D03-8ED3-DC38D554DFD7}.Debug|x64.ActiveCfg = Debug|Win32
+		{F23555C7-7205-4D03-8ED3-DC38D554DFD7}.Release|Win32.ActiveCfg = Release|Win32
+		{F23555C7-7205-4D03-8ED3-DC38D554DFD7}.Release|Win32.Build.0 = Release|Win32
+		{F23555C7-7205-4D03-8ED3-DC38D554DFD7}.Release|x64.ActiveCfg = Release|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|Win32.Build.0 = Debug|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|x64.ActiveCfg = Debug|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Release|Win32.ActiveCfg = Release|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Release|Win32.Build.0 = Release|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Release|x64.ActiveCfg = Release|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|Win32.Build.0 = Debug|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|x64.ActiveCfg = Debug|x64
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|x64.Build.0 = Debug|x64
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|Win32.ActiveCfg = Release|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|Win32.Build.0 = Release|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.ActiveCfg = Release|x64
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
