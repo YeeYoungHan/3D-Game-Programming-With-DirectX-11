@@ -7,9 +7,9 @@
 #ifndef BLURFILTER_H
 #define BLURFILTER_H
 
+#include "d3dUtil.h"
 #include <Windows.h>
 #include <xnamath.h>
-#include "d3dUtil.h"
 
 class BlurFilter
 {

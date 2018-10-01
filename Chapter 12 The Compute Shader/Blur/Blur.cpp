@@ -134,7 +134,7 @@ BlurApp::BlurApp(HINSTANCE hInstance)
   mBoxVB(0), mBoxIB(0), mScreenQuadVB(0), mScreenQuadIB(0),
   mGrassMapSRV(0), mWavesMapSRV(0), mCrateSRV(0), mOffscreenSRV(0), mOffscreenUAV(0), mOffscreenRTV(0), 
   mWaterTexOffset(0.0f, 0.0f), mEyePosW(0.0f, 0.0f, 0.0f), mLandIndexCount(0), mWaveIndexCount(0),
-  mRenderOptions(RenderOptions::TexturesAndFog),
+  mRenderOptions(TexturesAndFog),
   mTheta(1.3f*MathHelper::Pi), mPhi(0.4f*MathHelper::Pi), mRadius(80.0f)
 {
 	mMainWndCaption = L"Blur Demo";
@@ -326,13 +326,13 @@ void BlurApp::UpdateScene(float dt)
 	// Switch the render mode based in key input.
 	//
 	if( GetAsyncKeyState('1') & 0x8000 )
-		mRenderOptions = RenderOptions::Lighting; 
+		mRenderOptions = Lighting; 
 
 	if( GetAsyncKeyState('2') & 0x8000 )
-		mRenderOptions = RenderOptions::Textures; 
+		mRenderOptions = Textures; 
 
 	if( GetAsyncKeyState('3') & 0x8000 )
-		mRenderOptions = RenderOptions::TexturesAndFog; 
+		mRenderOptions = TexturesAndFog; 
 }
 
 void BlurApp::DrawScene()
@@ -446,15 +446,15 @@ void BlurApp::DrawWrapper()
 
 	switch(mRenderOptions)
 	{
-	case RenderOptions::Lighting:
+	case Lighting:
 		boxTech = Effects::BasicFX->Light3Tech;
 		landAndWavesTech = Effects::BasicFX->Light3Tech;
 		break;
-	case RenderOptions::Textures:
+	case Textures:
 		boxTech = Effects::BasicFX->Light3TexAlphaClipTech;
 		landAndWavesTech = Effects::BasicFX->Light3TexTech;
 		break;
-	case RenderOptions::TexturesAndFog:
+	case TexturesAndFog:
 		boxTech = Effects::BasicFX->Light3TexAlphaClipFogTech;
 		landAndWavesTech = Effects::BasicFX->Light3TexFogTech;
 		break;
