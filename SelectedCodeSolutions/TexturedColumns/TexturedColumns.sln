@@ -1,18 +1,44 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TexturedColumns", "TexturedColumns.vcxproj", "{DD6B1FEC-4238-40B2-B4D2-E4DB553C3527}"
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{974A9357-BC61-404D-BD2B-4E958CBE85A2}") = "TexturedColumns", "TexturedColumns.vcproj", "{E3AA505A-B45D-4F38-92AD-7C06A36B52AF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08} = {5C9DF018-9495-4C20-BE26-E830A0AB3D08}
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38} = {DF460EAB-570D-4B50-9089-2E2FC801BF38}
+	EndProjectSection
+EndProject
+Project("{974A9357-BC61-404D-BD2B-4E958CBE85A2}") = "Common", "..\..\Common\Common.vcproj", "{5C9DF018-9495-4C20-BE26-E830A0AB3D08}"
+EndProject
+Project("{974A9357-BC61-404D-BD2B-4E958CBE85A2}") = "Effects11", "..\..\Effects11\Effects11_2008.vcproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
 		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DD6B1FEC-4238-40B2-B4D2-E4DB553C3527}.Debug|Win32.ActiveCfg = Debug|Win32
-		{DD6B1FEC-4238-40B2-B4D2-E4DB553C3527}.Debug|Win32.Build.0 = Debug|Win32
-		{DD6B1FEC-4238-40B2-B4D2-E4DB553C3527}.Release|Win32.ActiveCfg = Release|Win32
-		{DD6B1FEC-4238-40B2-B4D2-E4DB553C3527}.Release|Win32.Build.0 = Release|Win32
+		{E3AA505A-B45D-4F38-92AD-7C06A36B52AF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E3AA505A-B45D-4F38-92AD-7C06A36B52AF}.Debug|Win32.Build.0 = Debug|Win32
+		{E3AA505A-B45D-4F38-92AD-7C06A36B52AF}.Debug|x64.ActiveCfg = Debug|Win32
+		{E3AA505A-B45D-4F38-92AD-7C06A36B52AF}.Release|Win32.ActiveCfg = Release|Win32
+		{E3AA505A-B45D-4F38-92AD-7C06A36B52AF}.Release|Win32.Build.0 = Release|Win32
+		{E3AA505A-B45D-4F38-92AD-7C06A36B52AF}.Release|x64.ActiveCfg = Release|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|Win32.Build.0 = Debug|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|x64.ActiveCfg = Debug|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Release|Win32.ActiveCfg = Release|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Release|Win32.Build.0 = Release|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Release|x64.ActiveCfg = Release|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|Win32.Build.0 = Debug|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|x64.ActiveCfg = Debug|x64
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|x64.Build.0 = Debug|x64
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|Win32.ActiveCfg = Release|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|Win32.Build.0 = Release|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.ActiveCfg = Release|x64
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
