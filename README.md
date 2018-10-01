@@ -24,6 +24,7 @@ http://www.d3dcoder.net/d3d11.htm 에서 다운로드 받은 Introduction to 3D 
 * Chapter 17 Cube Mapping
 * Chapter 18 Normal and Displacement Mapping
 * Chapter 19 Terrain Rendering
+* Chapter 20 Particle Systems
 
 본 프로젝트를 진행하는 개발자 정보는 다음과 같습니다.
 
