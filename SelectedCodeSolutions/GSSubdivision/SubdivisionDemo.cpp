@@ -92,7 +92,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 }
 
 SubdivisionApp::SubdivisionApp(HINSTANCE hInstance)
-: D3DApp(hInstance), mSphereVB(0), mSphereIB(0), mSphereMapSRV(0), mEyePosW(0.0f, 0.0f, 0.0f), mRenderOptions(RenderOptions::TexturesAndFog),
+: D3DApp(hInstance), mSphereVB(0), mSphereIB(0), mSphereMapSRV(0), mEyePosW(0.0f, 0.0f, 0.0f), mRenderOptions(TexturesAndFog),
   mTheta(1.3f*MathHelper::Pi), mPhi(0.4f*MathHelper::Pi), mRadius(20.0f)
 {
 	mMainWndCaption = L"Subdivision Demo";
@@ -187,13 +187,13 @@ void SubdivisionApp::UpdateScene(float dt)
 	// Switch the render mode based in key input.
 	//
 	if( GetAsyncKeyState('1') & 0x8000 )
-		mRenderOptions = RenderOptions::Lighting; 
+		mRenderOptions = Lighting; 
 
 	if( GetAsyncKeyState('2') & 0x8000 )
-		mRenderOptions = RenderOptions::Textures; 
+		mRenderOptions = Textures; 
 
 	if( GetAsyncKeyState('3') & 0x8000 )
-		mRenderOptions = RenderOptions::TexturesAndFog; 
+		mRenderOptions = TexturesAndFog; 
 }
 
 void SubdivisionApp::DrawScene()
@@ -228,13 +228,13 @@ void SubdivisionApp::DrawScene()
  
 	switch(mRenderOptions)
 	{
-	case RenderOptions::Lighting:
+	case Lighting:
 		activeTech = Effects::SubdivisionFX->Light3Tech;
 		break;
-	case RenderOptions::Textures:
+	case Textures:
 		activeTech = Effects::SubdivisionFX->Light3TexTech;
 		break;
-	case RenderOptions::TexturesAndFog:
+	case TexturesAndFog:
 		activeTech = Effects::SubdivisionFX->Light3TexFogTech;
 		break;
 	}
