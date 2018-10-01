@@ -17,6 +17,7 @@ http://www.d3dcoder.net/d3d11.htm 에서 다운로드 받은 Introduction to 3D 
 * Chapter 10 Stenciling
 * Chapter 11 The Geometry Shader
 * Chapter 12 The Compute Shader
+* Chapter 13 The Tessellation Stages
 
 본 프로젝트를 진행하는 개발자 정보는 다음과 같습니다.
 
