@@ -1,18 +1,44 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicTessellation", "BasicTessellation.vcxproj", "{116F1CF1-CBE8-435A-A07D-252D7D9F43BC}"
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{07006AA1-62D0-4022-8898-3C902CF328A2}") = "BasicTessellation", "BasicTessellation.vcproj", "{FCAB6B9D-A6A8-4366-B37C-17BCCB124EBE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08} = {5C9DF018-9495-4C20-BE26-E830A0AB3D08}
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38} = {DF460EAB-570D-4B50-9089-2E2FC801BF38}
+	EndProjectSection
+EndProject
+Project("{07006AA1-62D0-4022-8898-3C902CF328A2}") = "Common", "..\..\Common\Common.vcproj", "{5C9DF018-9495-4C20-BE26-E830A0AB3D08}"
+EndProject
+Project("{07006AA1-62D0-4022-8898-3C902CF328A2}") = "Effects11", "..\..\Effects11\Effects11_2008.vcproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
 		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{116F1CF1-CBE8-435A-A07D-252D7D9F43BC}.Debug|Win32.ActiveCfg = Debug|Win32
-		{116F1CF1-CBE8-435A-A07D-252D7D9F43BC}.Debug|Win32.Build.0 = Debug|Win32
-		{116F1CF1-CBE8-435A-A07D-252D7D9F43BC}.Release|Win32.ActiveCfg = Release|Win32
-		{116F1CF1-CBE8-435A-A07D-252D7D9F43BC}.Release|Win32.Build.0 = Release|Win32
+		{FCAB6B9D-A6A8-4366-B37C-17BCCB124EBE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FCAB6B9D-A6A8-4366-B37C-17BCCB124EBE}.Debug|Win32.Build.0 = Debug|Win32
+		{FCAB6B9D-A6A8-4366-B37C-17BCCB124EBE}.Debug|x64.ActiveCfg = Debug|Win32
+		{FCAB6B9D-A6A8-4366-B37C-17BCCB124EBE}.Release|Win32.ActiveCfg = Release|Win32
+		{FCAB6B9D-A6A8-4366-B37C-17BCCB124EBE}.Release|Win32.Build.0 = Release|Win32
+		{FCAB6B9D-A6A8-4366-B37C-17BCCB124EBE}.Release|x64.ActiveCfg = Release|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|Win32.Build.0 = Debug|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Debug|x64.ActiveCfg = Debug|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Release|Win32.ActiveCfg = Release|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Release|Win32.Build.0 = Release|Win32
+		{5C9DF018-9495-4C20-BE26-E830A0AB3D08}.Release|x64.ActiveCfg = Release|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|Win32.Build.0 = Debug|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|x64.ActiveCfg = Debug|x64
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Debug|x64.Build.0 = Debug|x64
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|Win32.ActiveCfg = Release|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|Win32.Build.0 = Release|Win32
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.ActiveCfg = Release|x64
+		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
