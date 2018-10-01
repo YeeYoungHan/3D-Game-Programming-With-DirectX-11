@@ -113,13 +113,13 @@ void AnimationClip::Interpolate(float t, std::vector<XMFLOAT4X4>& boneTransforms
 
 float SkinnedData::GetClipStartTime(const std::string& clipName)const
 {
-	auto clip = mAnimations.find(clipName);
+	ANIMATION_CLIP_MAP::const_iterator clip = mAnimations.find(clipName);
 	return clip->second.GetClipStartTime();
 }
 
 float SkinnedData::GetClipEndTime(const std::string& clipName)const
 {
-	auto clip = mAnimations.find(clipName);
+	ANIMATION_CLIP_MAP::const_iterator clip = mAnimations.find(clipName);
 	return clip->second.GetClipEndTime();
 }
 
@@ -144,7 +144,7 @@ void SkinnedData::GetFinalTransforms(const std::string& clipName, float timePos,
 	std::vector<XMFLOAT4X4> toParentTransforms(numBones);
 
 	// Interpolate all the bones of this clip at the given time instance.
-	auto clip = mAnimations.find(clipName);
+	ANIMATION_CLIP_MAP::const_iterator clip = mAnimations.find(clipName);
 	clip->second.Interpolate(timePos, toParentTransforms);
 
 	//

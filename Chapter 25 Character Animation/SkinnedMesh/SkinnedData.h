@@ -51,6 +51,8 @@ struct AnimationClip
     std::vector<BoneAnimation> BoneAnimations; 	
 };
 
+typedef std::map<std::string, AnimationClip> ANIMATION_CLIP_MAP;
+
 class SkinnedData
 {
 public:
@@ -77,7 +79,7 @@ private:
 
 	std::vector<XMFLOAT4X4> mBoneOffsets;
    
-	std::map<std::string, AnimationClip> mAnimations;
+	ANIMATION_CLIP_MAP mAnimations;
 };
  
 #endif // SKINNEDDATA_H
