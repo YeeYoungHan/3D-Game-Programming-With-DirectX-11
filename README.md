@@ -7,29 +7,7 @@ http://www.d3dcoder.net/d3d11.htm 에서 다운로드 받은 Introduction to 3D 
 
 본 프로젝트의 소스 코드를 빌드하려면 DirectX SDK(June 2010) 이 설치되어 있어야 하고 DirectX SDK(June 2010) 의 기본 설치 폴더인 "C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)" 폴더에 설치되어 있어야 합니다. 또한 VC++ 2008 이 설치되어 있어야 합니다.
 
-현재까지 아래의 폴더의 소스 코드를 VC++ 2008 에서 빌드할 수 있도록 수정하였습니다.
-
-* Chapter 4 Direct3D Initialization
-* Chapter 6 Drawing in Direct3D
-* Chapter 7 Lighting
-* Chapter 8 Texturing
-* Chapter 9 Blending
-* Chapter 10 Stenciling
-* Chapter 11 The Geometry Shader
-* Chapter 12 The Compute Shader
-* Chapter 13 The Tessellation Stages
-* Chapter 14 Building a First Person Camera
-* Chapter 15 Instancing and Frustum Culling
-* Chapter 16 Picking
-* Chapter 17 Cube Mapping
-* Chapter 18 Normal and Displacement Mapping
-* Chapter 19 Terrain Rendering
-* Chapter 20 Particle Systems
-* Chapter 21 Shadow Mapping
-* Chapter 22 Ambient Occlusion
-* Chapter 23 Meshes
-* Chapter 24 Quaternions
-* Chapter 25 Character Animation
+Introduction to 3D GAME PROGRAMMING WITH DIRECTX 11 도서의 모든 소스 코드를 VC++ 2008 에서 빌드할 수 있도록 수정하였습니다.
 
 본 프로젝트를 진행하는 개발자 정보는 다음과 같습니다.
 
