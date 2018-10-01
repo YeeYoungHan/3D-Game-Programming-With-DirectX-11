@@ -6,7 +6,7 @@ bool M3DLoader::LoadM3d(const std::string& filename,
 						std::vector<MeshGeometry::Subset>& subsets,
 						std::vector<M3dMaterial>& mats)
 {
-	std::ifstream fin(filename);
+	std::ifstream fin(filename.c_str());
 
 	UINT numMaterials = 0;
 	UINT numVertices  = 0;

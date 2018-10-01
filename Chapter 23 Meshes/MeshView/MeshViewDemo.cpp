@@ -4,7 +4,7 @@
 // Demonstrates loading and rendering meshes.
 //
 // Controls:
-//		Hold the left mouse button down and move the mouse to rotate.
+//    Hold the left mouse button down and move the mouse to rotate.
 //      Hold the right mouse button down to zoom in and out.
 //      Press '1' for wireframe
 //
@@ -392,7 +392,7 @@ void MeshViewApp::DrawScene()
 	md3dImmediateContext->ClearRenderTargetView(mRenderTargetView, reinterpret_cast<const float*>(&Colors::Silver));
 
 	// We already laid down scene depth to the depth buffer in the Normal/Depth map pass,
-	// so we can set the depth comparison test to “EQUALS.”  This prevents any overdraw
+	// so we can set the depth comparison test to “EQUALS.? This prevents any overdraw
 	// in this rendering pass, as only the nearest visible pixels will pass this depth
 	// comparison test.
 
