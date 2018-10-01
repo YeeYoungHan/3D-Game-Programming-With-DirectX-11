@@ -21,6 +21,7 @@ http://www.d3dcoder.net/d3d11.htm 에서 다운로드 받은 Introduction to 3D 
 * Chapter 14 Building a First Person Camera
 * Chapter 15 Instancing and Frustum Culling
 * Chapter 16 Picking
+* Chapter 17 Cube Mapping
 
 본 프로젝트를 진행하는 개발자 정보는 다음과 같습니다.
 
