@@ -107,7 +107,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 MirrorApp::MirrorApp(HINSTANCE hInstance)
 : D3DApp(hInstance), mRoomVB(0), mSkullVB(0), mSkullIB(0), mSkullIndexCount(0), mSkullTranslation(0.0f, 1.0f, -5.0f),
   mFloorDiffuseMapSRV(0), mWallDiffuseMapSRV(0), mMirrorDiffuseMapSRV(0), 
-  mEyePosW(0.0f, 0.0f, 0.0f), mRenderOptions(RenderOptions::Textures),
+  mEyePosW(0.0f, 0.0f, 0.0f), mRenderOptions(Textures),
   mTheta(1.24f*MathHelper::Pi), mPhi(0.42f*MathHelper::Pi), mRadius(12.0f)
 {
 	mMainWndCaption = L"Mirror Demo";
@@ -223,13 +223,13 @@ void MirrorApp::UpdateScene(float dt)
 	// Switch the render mode based in key input.
 	//
 	if( GetAsyncKeyState('1') & 0x8000 )
-		mRenderOptions = RenderOptions::Lighting; 
+		mRenderOptions = Lighting; 
 
 	if( GetAsyncKeyState('2') & 0x8000 )
-		mRenderOptions = RenderOptions::Textures; 
+		mRenderOptions = Textures; 
 
 	if( GetAsyncKeyState('3') & 0x8000 )
-		mRenderOptions = RenderOptions::TexturesAndFog; 
+		mRenderOptions = TexturesAndFog; 
 
 
 	//
@@ -287,15 +287,15 @@ void MirrorApp::DrawScene()
 
 	switch(mRenderOptions)
 	{
-	case RenderOptions::Lighting:
+	case Lighting:
 		activeTech = Effects::BasicFX->Light3Tech;
 		activeSkullTech = Effects::BasicFX->Light3Tech;
 		break;
-	case RenderOptions::Textures:
+	case Textures:
 		activeTech = Effects::BasicFX->Light3TexTech;
 		activeSkullTech = Effects::BasicFX->Light3Tech;
 		break;
-	case RenderOptions::TexturesAndFog:
+	case TexturesAndFog:
 		activeTech = Effects::BasicFX->Light3TexFogTech;
 		activeSkullTech = Effects::BasicFX->Light3FogTech;
 		break;
