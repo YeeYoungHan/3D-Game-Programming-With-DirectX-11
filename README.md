@@ -27,6 +27,7 @@ http://www.d3dcoder.net/d3d11.htm 에서 다운로드 받은 Introduction to 3D 
 * Chapter 20 Particle Systems
 * Chapter 21 Shadow Mapping
 * Chapter 22 Ambient Occlusion
+* Chapter 23 Meshes
 
 본 프로젝트를 진행하는 개발자 정보는 다음과 같습니다.
 
