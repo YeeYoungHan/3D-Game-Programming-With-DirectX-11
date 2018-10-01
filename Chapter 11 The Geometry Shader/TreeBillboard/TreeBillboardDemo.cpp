@@ -128,7 +128,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 TreeBillboardApp::TreeBillboardApp(HINSTANCE hInstance)
 : D3DApp(hInstance), mLandVB(0), mLandIB(0), mWavesVB(0), mWavesIB(0), mBoxVB(0), mBoxIB(0), mTreeSpritesVB(0),
   mGrassMapSRV(0), mWavesMapSRV(0), mBoxMapSRV(0), mAlphaToCoverageOn(true),
-  mWaterTexOffset(0.0f, 0.0f), mEyePosW(0.0f, 0.0f, 0.0f), mLandIndexCount(0), mRenderOptions(RenderOptions::TexturesAndFog),
+  mWaterTexOffset(0.0f, 0.0f), mEyePosW(0.0f, 0.0f, 0.0f), mLandIndexCount(0), mRenderOptions(TexturesAndFog),
   mTheta(1.3f*MathHelper::Pi), mPhi(0.4f*MathHelper::Pi), mRadius(80.0f)
 {
 	mMainWndCaption = L"Tree Billboard Demo";
@@ -322,13 +322,13 @@ void TreeBillboardApp::UpdateScene(float dt)
 	// Switch the render mode based in key input.
 	//
 	if( GetAsyncKeyState('1') & 0x8000 )
-		mRenderOptions = RenderOptions::Lighting; 
+		mRenderOptions = Lighting; 
 
 	if( GetAsyncKeyState('2') & 0x8000 )
-		mRenderOptions = RenderOptions::Textures; 
+		mRenderOptions = Textures; 
 
 	if( GetAsyncKeyState('3') & 0x8000 )
-		mRenderOptions = RenderOptions::TexturesAndFog; 
+		mRenderOptions = TexturesAndFog; 
 
 	if( GetAsyncKeyState('R') & 0x8000 )
 		mAlphaToCoverageOn = true;
@@ -381,15 +381,15 @@ void TreeBillboardApp::DrawScene()
  
 	switch(mRenderOptions)
 	{
-	case RenderOptions::Lighting:
+	case Lighting:
 		boxTech = Effects::BasicFX->Light3Tech;
 		landAndWavesTech = Effects::BasicFX->Light3Tech;
 		break;
-	case RenderOptions::Textures:
+	case Textures:
 		boxTech = Effects::BasicFX->Light3TexAlphaClipTech;
 		landAndWavesTech = Effects::BasicFX->Light3TexTech;
 		break;
-	case RenderOptions::TexturesAndFog:
+	case TexturesAndFog:
 		boxTech = Effects::BasicFX->Light3TexAlphaClipFogTech;
 		landAndWavesTech = Effects::BasicFX->Light3TexFogTech;
 		break;
@@ -744,13 +744,13 @@ void TreeBillboardApp::DrawTreeSprites(CXMMATRIX viewProj)
 	ID3DX11EffectTechnique* treeTech;
 	switch(mRenderOptions)
 	{
-	case RenderOptions::Lighting:
+	case Lighting:
 		treeTech = Effects::TreeSpriteFX->Light3Tech;
 		break;
-	case RenderOptions::Textures:
+	case Textures:
 		treeTech = Effects::TreeSpriteFX->Light3TexAlphaClipTech;
 		break;
-	case RenderOptions::TexturesAndFog:
+	case TexturesAndFog:
 		treeTech = Effects::TreeSpriteFX->Light3TexAlphaClipFogTech;
 		break;
 	}
