@@ -40,10 +40,8 @@ int main()
 	cout << "XMVectorPow(u, p)              = " << XMVectorPow(u, p) << endl;
 	cout << "XMVectorSqrt(u)                = " << XMVectorSqrt(u) << endl;
 	
-	cout << "XMVectorSwizzle(u, 2, 2, 1, 3) = " 
-		<< XMVectorSwizzle(u, 2, 2, 1, 3) << endl;
-	cout << "XMVectorSwizzle(u, 2, 1, 0, 3) = " 
-		<< XMVectorSwizzle(u, 2, 1, 0, 3) << endl;
+	cout << "XMVectorSwizzle(u, 2, 2, 1, 3) = " << XMVectorSwizzle(u, 2, 2, 1, 3) << endl;
+	cout << "XMVectorSwizzle(u, 2, 1, 0, 3) = " << XMVectorSwizzle(u, 2, 1, 0, 3) << endl;
 
 	cout << "XMVectorMultiply(u, v)         = " << XMVectorMultiply(u, v) << endl;
 	cout << "XMVectorSaturate(q)            = " << XMVectorSaturate(q) << endl;

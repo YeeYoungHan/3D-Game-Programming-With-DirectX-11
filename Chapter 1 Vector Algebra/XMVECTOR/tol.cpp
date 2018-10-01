@@ -1,4 +1,3 @@
-/*
 #include <windows.h> // for FLOAT definition
 #include <xnamath.h>
 #include <iostream>
@@ -29,6 +28,7 @@ int main()
 
 	// Raising 1 to any power should still be 1.  Is it?
 	float powLU = powf(LU, 1.0e6f);
-	cout << "LU^(10^6) = " << powLU << endl;
+	cout << "LU^(1.0^6) = " << powLU << endl;
+
+	return 0;
 }
-*/

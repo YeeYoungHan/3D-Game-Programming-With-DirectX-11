@@ -1,4 +1,3 @@
-/*
 #include <windows.h> // for FLOAT definition
 #include <xnamath.h>
 #include <iostream>
@@ -84,4 +83,4 @@ int main()
 	cout << "angle               = " << angleDegrees << endl;
 
 	return 0;
-}*/
+}

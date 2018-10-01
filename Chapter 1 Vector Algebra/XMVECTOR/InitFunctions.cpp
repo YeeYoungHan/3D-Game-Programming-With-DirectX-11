@@ -1,8 +1,7 @@
-
-/*
 #include <windows.h> // for FLOAT definition
 #include <xnamath.h>
 #include <iostream>
+
 using namespace std;
 
 // Overload the  "<<" operators so that we can use cout to 
@@ -41,4 +40,3 @@ int main()
 
 	return 0;
 }
-*/
