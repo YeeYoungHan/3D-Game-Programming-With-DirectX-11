@@ -9,6 +9,7 @@ http://www.d3dcoder.net/d3d11.htm 에서 다운로드 받은 Introduction to 3D 
 
 * Chapter 4 Direct3D Initialization
 * Chapter 6 Drawing in Direct3D
+* Chapter 7 Lighting
 
 본 프로젝트를 진행하는 개발자 정보는 다음과 같습니다.
 
