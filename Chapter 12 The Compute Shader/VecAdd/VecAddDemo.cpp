@@ -163,7 +163,7 @@ void VecAddApp::DoComputeWork()
 
 	Data* dataView = reinterpret_cast<Data*>(mappedData.pData);
 
-	for(int i = 0; i < mNumElements; ++i)
+	for(int i = 0; i < (int)mNumElements; ++i)
 	{
 		fout << "(" << dataView[i].v1.x << ", " << dataView[i].v1.y << ", " << dataView[i].v1.z <<
 			", " << dataView[i].v2.x << ", " << dataView[i].v2.y << ")" << std::endl;
@@ -178,13 +178,13 @@ void VecAddApp::BuildBuffersAndViews()
 {
 	std::vector<Data> dataA(mNumElements);
 	std::vector<Data> dataB(mNumElements);
-	for(int i = 0; i < mNumElements; ++i)
+	for(int i = 0; i < (int)mNumElements; ++i)
 	{
-		dataA[i].v1 = XMFLOAT3(i, i, i);
-		dataA[i].v2 = XMFLOAT2(i, 0);
+		dataA[i].v1 = XMFLOAT3( (float)i, (float)i, (float)i);
+		dataA[i].v2 = XMFLOAT2((float)i, 0);
 
-		dataB[i].v1 = XMFLOAT3(-i, i, 0.0f);
-		dataB[i].v2 = XMFLOAT2(0, -i);
+		dataB[i].v1 = XMFLOAT3((float)(-i), (float)i, 0.0f);
+		dataB[i].v2 = XMFLOAT2(0, (float)(-i));
 	}
 
 	// Create a buffer to be bound as a shader input (D3D11_BIND_SHADER_RESOURCE).
