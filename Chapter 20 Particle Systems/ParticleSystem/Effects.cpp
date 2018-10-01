@@ -8,7 +8,7 @@
 Effect::Effect(ID3D11Device* device, const std::wstring& filename)
 	: mFX(0)
 {
-	std::ifstream fin(filename, std::ios::binary);
+	std::ifstream fin(filename.c_str(), std::ios::binary);
 
 	fin.seekg(0, std::ios_base::end);
 	int size = (int)fin.tellg();
