@@ -9,9 +9,9 @@
 #ifndef GPUWAVES_H
 #define GPUWAVES_H
 
+#include "d3dUtil.h"
 #include <Windows.h>
 #include <xnamath.h>
-#include "d3dUtil.h"
 
 class GpuWaves
 {
