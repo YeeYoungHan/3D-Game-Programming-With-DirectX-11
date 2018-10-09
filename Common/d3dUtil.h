@@ -30,13 +30,13 @@
 
 #if defined(DEBUG) | defined(_DEBUG)
 	#ifndef HR
-	#define HR(x)                                              \
-	{                                                          \
-		HRESULT hr = (x);                                      \
-		if(FAILED(hr))                                         \
-		{                                                      \
+	#define HR(x)                                          \
+	{                                                      \
+		HRESULT hr = (x);                                    \
+		if(FAILED(hr))                                       \
+		{                                                    \
 			DXTrace(__FILE__, (DWORD)__LINE__, hr, L#x, true); \
-		}                                                      \
+		}                                                    \
 	}
 	#endif
 
