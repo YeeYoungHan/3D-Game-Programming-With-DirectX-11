@@ -249,8 +249,7 @@ void LightingApp::UpdateScene(float dt)
 	// Circle light over the land surface.
 	mPointLight.Position.x = 70.0f*cosf( 0.2f*mTimer.TotalTime() );
 	mPointLight.Position.z = 70.0f*sinf( 0.2f*mTimer.TotalTime() );
-	mPointLight.Position.y = MathHelper::Max(GetHillHeight(mPointLight.Position.x, 
-		mPointLight.Position.z), -3.0f) + 10.0f;
+	mPointLight.Position.y = MathHelper::Max(GetHillHeight(mPointLight.Position.x, mPointLight.Position.z), -3.0f) + 10.0f;
 
 
 	// The spotlight takes on the camera position and is aimed in the
@@ -266,10 +265,10 @@ void LightingApp::DrawScene()
 	md3dImmediateContext->ClearDepthStencilView(mDepthStencilView, D3D11_CLEAR_DEPTH|D3D11_CLEAR_STENCIL, 1.0f, 0);
 
 	md3dImmediateContext->IASetInputLayout(mInputLayout);
-    md3dImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	md3dImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
  
 	UINT stride = sizeof(Vertex);
-    UINT offset = 0;
+	UINT offset = 0;
 
 	XMMATRIX view  = XMLoadFloat4x4(&mView);
 	XMMATRIX proj  = XMLoadFloat4x4(&mProj);
@@ -281,10 +280,10 @@ void LightingApp::DrawScene()
 	mfxSpotLight->SetRawValue(&mSpotLight, 0, sizeof(mSpotLight));
 	mfxEyePosW->SetRawValue(&mEyePosW, 0, sizeof(mEyePosW));
  
-    D3DX11_TECHNIQUE_DESC techDesc;
-    mTech->GetDesc( &techDesc );
-    for(UINT p = 0; p < techDesc.Passes; ++p)
-    {
+	D3DX11_TECHNIQUE_DESC techDesc;
+	mTech->GetDesc( &techDesc );
+	for(UINT p = 0; p < techDesc.Passes; ++p)
+	{
 		//
 		// Draw the hills.
 		//
@@ -322,7 +321,7 @@ void LightingApp::DrawScene()
 
 		mTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
 		md3dImmediateContext->DrawIndexed(3*mWaves.TriangleCount(), 0, 0);
-    }
+	}
 
 	HR(mSwapChain->Present(0, 0));
 }
@@ -417,29 +416,29 @@ void LightingApp::BuildLandGeometryBuffers()
 		vertices[i].Normal = GetHillNormal(p.x, p.z);
 	}
 
-    D3D11_BUFFER_DESC vbd;
-    vbd.Usage = D3D11_USAGE_IMMUTABLE;
+	D3D11_BUFFER_DESC vbd;
+	vbd.Usage = D3D11_USAGE_IMMUTABLE;
 	vbd.ByteWidth = sizeof(Vertex) * grid.Vertices.size();
-    vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    vbd.CPUAccessFlags = 0;
-    vbd.MiscFlags = 0;
-    D3D11_SUBRESOURCE_DATA vinitData;
-    vinitData.pSysMem = &vertices[0];
-    HR(md3dDevice->CreateBuffer(&vbd, &vinitData, &mLandVB));
+	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+	vbd.CPUAccessFlags = 0;
+	vbd.MiscFlags = 0;
+	D3D11_SUBRESOURCE_DATA vinitData;
+	vinitData.pSysMem = &vertices[0];
+	HR(md3dDevice->CreateBuffer(&vbd, &vinitData, &mLandVB));
 
 	//
 	// Pack the indices of all the meshes into one index buffer.
 	//
 
 	D3D11_BUFFER_DESC ibd;
-    ibd.Usage = D3D11_USAGE_IMMUTABLE;
+	ibd.Usage = D3D11_USAGE_IMMUTABLE;
 	ibd.ByteWidth = sizeof(UINT) * mLandIndexCount;
-    ibd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-    ibd.CPUAccessFlags = 0;
-    ibd.MiscFlags = 0;
-    D3D11_SUBRESOURCE_DATA iinitData;
+	ibd.BindFlags = D3D11_BIND_INDEX_BUFFER;
+	ibd.CPUAccessFlags = 0;
+	ibd.MiscFlags = 0;
+	D3D11_SUBRESOURCE_DATA iinitData;
 	iinitData.pSysMem = &grid.Indices[0];
-    HR(md3dDevice->CreateBuffer(&ibd, &iinitData, &mLandIB));
+	HR(md3dDevice->CreateBuffer(&ibd, &iinitData, &mLandIB));
 }
 
 void LightingApp::BuildWaveGeometryBuffers()
@@ -447,13 +446,13 @@ void LightingApp::BuildWaveGeometryBuffers()
 	// Create the vertex buffer.  Note that we allocate space only, as
 	// we will be updating the data every time step of the simulation.
 
-    D3D11_BUFFER_DESC vbd;
-    vbd.Usage = D3D11_USAGE_DYNAMIC;
+	D3D11_BUFFER_DESC vbd;
+	vbd.Usage = D3D11_USAGE_DYNAMIC;
 	vbd.ByteWidth = sizeof(Vertex) * mWaves.VertexCount();
-    vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    vbd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-    vbd.MiscFlags = 0;
-    HR(md3dDevice->CreateBuffer(&vbd, 0, &mWavesVB));
+	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+	vbd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+	vbd.MiscFlags = 0;
+	HR(md3dDevice->CreateBuffer(&vbd, 0, &mWavesVB));
 
 
 	// Create the index buffer.  The index buffer is fixed, so we only 
@@ -482,14 +481,14 @@ void LightingApp::BuildWaveGeometryBuffers()
 	}
 
 	D3D11_BUFFER_DESC ibd;
-    ibd.Usage = D3D11_USAGE_IMMUTABLE;
+	ibd.Usage = D3D11_USAGE_IMMUTABLE;
 	ibd.ByteWidth = sizeof(UINT) * indices.size();
-    ibd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-    ibd.CPUAccessFlags = 0;
-    ibd.MiscFlags = 0;
-    D3D11_SUBRESOURCE_DATA iinitData;
-    iinitData.pSysMem = &indices[0];
-    HR(md3dDevice->CreateBuffer(&ibd, &iinitData, &mWavesIB));
+	ibd.BindFlags = D3D11_BIND_INDEX_BUFFER;
+	ibd.CPUAccessFlags = 0;
+	ibd.MiscFlags = 0;
+	D3D11_SUBRESOURCE_DATA iinitData;
+	iinitData.pSysMem = &indices[0];
+	HR(md3dDevice->CreateBuffer(&ibd, &iinitData, &mWavesIB));
 }
 
 void LightingApp::BuildFX()
@@ -504,8 +503,7 @@ void LightingApp::BuildFX()
 	fin.read(&compiledShader[0], size);
 	fin.close();
 	
-	HR(D3DX11CreateEffectFromMemory(&compiledShader[0], size, 
-		0, md3dDevice, &mFX));
+	HR(D3DX11CreateEffectFromMemory(&compiledShader[0], size, 0, md3dDevice, &mFX));
 
 	mTech                = mFX->GetTechniqueByName("LightTech");
 	mfxWorldViewProj     = mFX->GetVariableByName("gWorldViewProj")->AsMatrix();
@@ -528,8 +526,8 @@ void LightingApp::BuildVertexLayout()
 	};
 
 	// Create the input layout
-    D3DX11_PASS_DESC passDesc;
-    mTech->GetPassByIndex(0)->GetDesc(&passDesc);
+	D3DX11_PASS_DESC passDesc;
+	mTech->GetPassByIndex(0)->GetDesc(&passDesc);
 	HR(md3dDevice->CreateInputLayout(vertexDesc, 2, passDesc.pIAInputSignature, 
-		passDesc.IAInputSignatureSize, &mInputLayout));
+	passDesc.IAInputSignatureSize, &mInputLayout));
 }
